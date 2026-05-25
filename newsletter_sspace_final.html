@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Newsletter S'pace — Édition #01</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900&display=swap');
+:root{
+  --navy:#08091e;
+  --navy2:#0c0e28;
+  --navy3:#0f1132;
+  --card:#10143a;
+  --border:rgba(255,255,255,0.07);
+  --pink:#f0197d;
+  --green:#00c16e;
+  --blue:#1ab4f5;
+  --orange:#ff8c00;
+  --white:#fff;
+  --grey:rgba(255,255,255,0.5);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{background:#050614;font-family:'Montserrat',sans-serif;color:var(--white);}
+.wrap{max-width:640px;margin:0 auto;background:var(--navy);}
+
+/* ── HEADER ── */
+.hd{background:var(--navy2);padding:32px 44px 38px;position:relative;overflow:hidden;}
+.hd::before{content:'';position:absolute;inset:0;
+  background-image:linear-gradient(rgba(255,255,255,.018)1px,transparent 1px),
+                   linear-gradient(90deg,rgba(255,255,255,.018)1px,transparent 1px);
+  background-size:36px 36px;pointer-events:none;}
+/* Colored glow blobs */
+.hd::after{content:'';position:absolute;width:360px;height:360px;border-radius:50%;
+  background:radial-gradient(circle,rgba(26,180,245,.07)0%,transparent 65%);
+  top:-120px;right:-80px;pointer-events:none;}
+
+.hd-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;position:relative;z-index:1;}
+.logo-row{display:flex;align-items:center;gap:14px;}
+.logo-img{width:46px;height:46px;border-radius:10px;object-fit:contain;}
+.logo-text{font-size:22px;font-weight:900;letter-spacing:1px;color:var(--white);}
+.logo-text span{color:var(--pink);}
+
+.pill{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:6px 14px;border-radius:4px;border:1px solid rgba(26,180,245,.4);color:var(--blue);}
+
+/* Rainbow bar */
+.rainbow-bar{height:3px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--green),var(--blue));border-radius:2px;width:56px;margin-bottom:18px;position:relative;z-index:1;}
+
+.hd-kicker{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;position:relative;z-index:1;}
+.hd-title{font-size:clamp(26px,5.5vw,42px);font-weight:900;line-height:1.08;letter-spacing:-.5px;position:relative;z-index:1;margin-bottom:14px;}
+.hd-title .pink{color:var(--pink);}
+.hd-title .blue{color:var(--blue);}
+.hd-sub{font-size:13px;color:var(--grey);line-height:1.75;max-width:420px;position:relative;z-index:1;font-weight:400;}
+
+/* ── SECTIONS ── */
+.sec{padding:34px 44px;}
+.sec-label{font-size:10px;font-weight:800;letter-spacing:3px;text-transform:uppercase;color:var(--blue);
+  margin-bottom:20px;display:flex;align-items:center;gap:10px;}
+.sec-label::after{content:'';flex:1;height:1px;background:var(--border);}
+
+/* ── COUPON ── */
+.coupon{border-radius:14px;padding:34px 28px;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(135deg,rgba(240,25,125,.08),rgba(255,140,0,.06));}
+/* Dashed border via outline trick */
+.coupon{border:1.5px dashed rgba(240,25,125,.4);}
+.coupon::before{content:'';position:absolute;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,25,125,.1)0%,transparent 65%);top:-80px;right:-60px;}
+.coupon-pct{font-size:82px;font-weight:900;line-height:1;display:block;margin-bottom:4px;
+  background:linear-gradient(135deg,var(--pink),var(--orange));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.coupon-txt{font-size:14px;font-weight:600;color:var(--grey);margin-bottom:22px;}
+.coupon-code{display:inline-block;font-size:16px;font-weight:800;letter-spacing:5px;
+  color:var(--white);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);
+  padding:11px 26px;border-radius:6px;margin-bottom:11px;}
+.coupon-exp{font-size:11px;color:var(--grey);font-style:italic;}
+
+/* ── MSG ── */
+.msg{display:flex;gap:16px;background:var(--card);border:1px solid var(--border);
+  border-left:3px solid var(--blue);border-radius:10px;padding:22px;}
+.msg-ico{width:44px;height:44px;border-radius:8px;display:flex;align-items:center;justify-content:center;
+  font-size:20px;flex-shrink:0;background:linear-gradient(135deg,var(--blue),#0066cc);}
+.msg h3{font-size:12px;font-weight:800;margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;color:var(--blue);}
+.msg p{font-size:13px;color:var(--grey);line-height:1.7;}
+
+/* ── GAME ── */
+.game-block{border-radius:14px;overflow:hidden;border:1px solid var(--border);}
+.game-top{padding:30px 32px 26px;text-align:center;position:relative;overflow:hidden;
+  background:linear-gradient(160deg,#0e0820,#120a28);}
+.game-top::before{content:'🕹';position:absolute;font-size:160px;right:-30px;top:-30px;opacity:.05;line-height:1;}
+/* Neon top border */
+.game-top::after{content:'';position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--pink),var(--blue),var(--green));}
+.game-badge{display:inline-block;font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  color:var(--pink);background:rgba(240,25,125,.1);border:1px solid rgba(240,25,125,.3);
+  padding:4px 14px;border-radius:4px;margin-bottom:14px;}
+.game-title{font-size:30px;font-weight:900;letter-spacing:-.5px;margin-bottom:10px;
+  background:linear-gradient(135deg,var(--white),rgba(255,255,255,.75));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.game-desc{font-size:13px;color:var(--grey);line-height:1.65;margin-bottom:24px;
+  max-width:320px;margin-left:auto;margin-right:auto;}
+.btn-play{display:inline-block;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:var(--white);padding:15px 44px;border-radius:6px;text-decoration:none;
+  background:linear-gradient(135deg,var(--pink),#c00060);}
+.game-note{font-size:11px;color:var(--grey);margin-top:14px;font-style:italic;}
+.game-bottom{display:grid;grid-template-columns:1fr 1fr;background:var(--navy3);}
+.game-stat{padding:18px 24px;border-right:1px solid var(--border);text-align:center;}
+.game-stat:last-child{border-right:none;}
+.game-stat strong{display:block;font-size:22px;font-weight:900;margin-bottom:3px;
+  background:linear-gradient(135deg,var(--green),#00a0a0);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.game-stat span{font-size:10px;color:var(--grey);font-weight:700;text-transform:uppercase;letter-spacing:1px;}
+
+/* ── STATS ── */
+.stats-row{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:20px 12px;text-align:center;position:relative;overflow:hidden;}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;}
+.stat-card:nth-child(1)::before{background:var(--pink);}
+.stat-card:nth-child(2)::before{background:var(--green);}
+.stat-card:nth-child(3)::before{background:var(--orange);}
+.stat-num{font-size:28px;font-weight:900;display:block;margin-bottom:6px;line-height:1;}
+.stat-card:nth-child(1) .stat-num{color:var(--pink);}
+.stat-card:nth-child(2) .stat-num{color:var(--green);}
+.stat-card:nth-child(3) .stat-num{color:var(--orange);}
+.stat-lbl{font-size:11px;color:var(--grey);line-height:1.5;font-weight:500;}
+
+/* ── EVENTS ── */
+.event-tabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:22px;}
+.etab{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;
+  padding:10px 16px;color:var(--grey);border-bottom:2px solid transparent;margin-bottom:-1px;cursor:default;}
+.etab.active{color:var(--white);border-bottom-color:var(--blue);}
+.event-row{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--border);align-items:center;}
+.event-row:last-child{border-bottom:none;padding-bottom:0;}
+.e-date{background:var(--card);border:1px solid var(--border);border-radius:8px;
+  padding:9px 11px;text-align:center;min-width:50px;flex-shrink:0;}
+.e-date .d{font-size:18px;font-weight:900;line-height:1;display:block;}
+.e-date .m{font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--grey);}
+.e-info h4{font-size:13px;font-weight:700;margin-bottom:3px;}
+.e-info p{font-size:11px;color:var(--grey);}
+.e-tag{margin-left:auto;flex-shrink:0;font-size:9px;font-weight:800;letter-spacing:1px;
+  text-transform:uppercase;padding:4px 10px;border-radius:4px;}
+.et-pink{background:rgba(240,25,125,.12);color:var(--pink);border:1px solid rgba(240,25,125,.28);}
+.et-blue{background:rgba(26,180,245,.1);color:var(--blue);border:1px solid rgba(26,180,245,.25);}
+.et-green{background:rgba(0,193,110,.1);color:var(--green);border:1px solid rgba(0,193,110,.25);}
+
+/* ── APP TEASE ── */
+.app-block{border-radius:12px;overflow:hidden;display:flex;
+  background:var(--card);border:1px solid var(--border);}
+.app-bar{width:4px;flex-shrink:0;background:linear-gradient(180deg,var(--pink),var(--blue),var(--green));}
+.app-body{padding:24px 22px;}
+.app-body h3{font-size:17px;font-weight:900;margin-bottom:9px;}
+.app-body p{font-size:13px;color:var(--grey);line-height:1.7;margin-bottom:16px;}
+.soon-pill{display:inline-block;font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 14px;border-radius:4px;
+  background:linear-gradient(135deg,var(--pink),var(--blue));color:var(--white);}
+
+/* ── DIVIDER ── */
+.div-line{height:1px;background:var(--border);margin:0 44px;}
+
+/* ── FOOTER ── */
+.footer{background:#040513;padding:28px 44px;text-align:center;border-top:1px solid var(--border);}
+.footer-logo{display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:14px;opacity:.35;}
+.footer-logo img{width:28px;height:28px;border-radius:6px;}
+.footer-logo span{font-size:16px;font-weight:900;letter-spacing:1px;}
+.footer p{font-size:11px;color:rgba(255,255,255,.22);line-height:1.9;}
+.footer a{color:rgba(26,180,245,.45);text-decoration:none;}
+
+@media(max-width:500px){
+  .sec,.hd{padding:24px 20px;}
+  .hd-top{flex-direction:column;align-items:flex-start;gap:12px;}
+  .stats-row{grid-template-columns:1fr 1fr;}
+  .div-line{margin:0 20px;}
+  .footer{padding:20px 20px;}
+  .game-bottom{grid-template-columns:1fr;}
+  .game-stat{border-right:none;border-bottom:1px solid var(--border);}
+  .game-stat:last-child{border-bottom:none;}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- HEADER -->
+<div class="hd">
+  <div class="hd-top">
+    <div class="logo-row">
+      <img class="logo-img" src="data:image/png;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCADhAOEDASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAYHBAUIAwIB/8QAPRAAAgIBAgMFBQUGBQUBAAAAAAECAwQFEQYhMRJBUWFxByIycoETFCNCsTVSYqHB0TM3kbPwJENzstLh/8QAHAEBAAMBAQEBAQAAAAAAAAAAAAUGBwQDAQII/8QANxEAAQMCAwUGBAUEAwAAAAAAAAECAwQRBSFRBhIxQXEiYYGx0fATUpGhIzIzQsEHFDXhYnKC/9oADAMBAAIRAxEAPwDnwAFlOQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGx0jRs3UpKVUPs6e+2a5fTxPiuRqXU6KWknq5EigarnLyT39zXxTlJRinKTeySW7ZIdK4WyL4KzNseNF9IJbz+vciRaRo2Hpsd6odu7bnbP4vp4L0NijkfUKuTTUME2CijRJMQXeX5UXJOq8V8MupXeXpc4buifb2/LLqa6ScW4yTTXVNEon8cvUx8rFpyF78feXSS6ogaPHXsXdnzTXmcGK7HRSIr6Nd1dF4L0Xinl0I+DJy8K7H95+/D95f18DGLLFMyZu/Gt0M9qaWalkWOZqtcmoAB6ngAAAAAAAAAAAAAAAAAAAAAAAAAAAD0xaLsq+NGPXKyyXSMSW+zjgbI4stsyLr5Ymm0S7FlsY7zsltv2Yb8ujW7fTdcn3Xjo/Deh6Tpb03B06mGPPb7RSXalY13yk+bfn3dxVMa2upMMk+CiK96cUTl1XXu+qofuJY0kb8W+7ztxt3X5lHaNwvVT2btRcbrOqqXwL18f09SRxSjFRikkuSS7iWa9wjbV2r9Lbtr6ulv3l6eP6+pFLPwnJWe52d+12uW23Xc6aPFYMSZ8SF1+7mnVDedmlwn+1vh1rc/m/8AXP8AjTIGNn52LgU/a5Vqgu5dXL0XeaPWeKKqt6dOStn0dr+Fenj+nqRPJvuybndkWytsfWUn/wA2JSOnVc3ZEPjm3FNR3io7SP1/anr4Zd5vqcirJTnVLfxT6o9CNQnKElKEnGS6NGzxNST2hkcn+8un1K/XYJJHd8PaTTn/ALInCdroai0dX2Ha/tX08u82RgZenQs3lRtXLw7n/YzotSipRaafRo/SJgqZaZ+9Gtl98Sy1tBTV8e5M3eTl3dFI5dXOmzsWRcZfqfBI7qq7YdiyKkvM1GoYTx/xIPtVt9/VFroMYjqVRj0s77KZtjOy81AizRLvRp9U669U+iGGACZKqAAAAAAAAAAAAAAAAAAAAAAAAdCexWKXs6wWkk5WXN+b+0l/YmhDPYt/l1p/z3f7siZn8+Y7/k6j/u7zU/CkZ4z420XheDryrXkZrj2oYlTTm9+jl3RXm/omUXxjxVqXE+e8jMVVFXSFFK2il3dp9ZPzf0SNx7bv8w8r/wAFP/qQk1TZTA6WkpY6tqXke1FuvK6Xsnu56Me5l91bXyXpoDd6TwnxDqmMsnC0y2VMlvGc5Rgpenaa39eh48H4NGpcUadg5K3ptuXbX7ySb2+u231OhIpRioxSSS2SS5JF7paZJUVXLkQeLYo6jVrI0uq55nOOq6bqGlZP3bUcS3Gt23SmuUl4p9GvQxDo7VtNwdVw5YmoY1eRVLukua80+qfmireLfZ1m4Csy9GnPNxlu3S1+NBeW3x/TZ+TPs1E5mbc0PlDjcU9my9l32X08SE4uTbjv3Jbx74vobfEzacjaKfYn+6/6eJopJxk4yTTT2aa2aYIGtwyGqzXJ2vrqXnCdoarDlRrV3mfKv8Ly8u4kxi6pKMcKal+bZL1NdVqOTXBR3jNLvkt2eORkW3y7Vkt9uiXREPS4JNHO1z1SyLfrYs+I7XUs1G+OJq7zkVM+CXyU8gAWkzsAAAAAAAAAAAAAAAAAAAAAAAA6F9i3+XWn/Pd/uyJmV37Fta0+PAf3e3IhXZg3TjbFvntOTlFpd++7X0Zla5xDkZ6lRjqVGM+TX5prz/sYtV4FVV+LVCNTdbvrdV4ZrfxyzIjE8Wgw9vbW7uSc/wDSFc+2qudvGl+fXFzxZ1VwjbHnHtKOzW/qQcuGyELK5V2QjOEltKMlumvQiWu8HwnvfpLVcurok/dfyvu9Hy9DVMOVlNTsp75NREv0yInDtqopnblSm6uvLx08uhEcHKvwsynMxp9i6manCXg09y7OEeNNL16MKJTWJntLtUWPZSff2H3ry6lIZFN2PdKnIqnVZH4oyWzR8d+5OQVDoly4E5XYfFXMRVXPkqe80OmQU9wl7RNQ03s42rqzUMVclPf8aC9X8X15+Zauj6rp+r4iytOyq8iro3HrF+DT5p+pLw1DJUy4lOrMPmpF7aZa8jT8WcG6Tr8Z3OtYuc1yyKo85P8AjX5v18ypOJ+GNW4fu2zae3Q3tDIr3dcvr3Pyf8y/z4vqqvpnTfVC2qa7M4TipRkvBp9T8TUrJc+CnvQ4vNS2avabp6HNILR4u9m0LXLL4ecapdZYk5e6/kk+no+XmitM3FycLJnjZlFlF0HtKFkdmv8AniRMsD4ls5C30ldDVtvGuenNDxAB5HYAAAAAAAAAAAAAAAAAAAAAAAAe+Dl5ODkxyMW2VVkeW6714PxRNdC4txslKnUlDGu6Kzf8OX/z9eXmQMHlJC2TiRmI4TTV7bSpnyVOPvqXGua3XNMFZaHxBnaV2a4S+2x0/wDBm+S+V936eRPNG1rA1WH/AE9vZtS3lTPlNfTvXmiOlp3R58jPcTwKpoO0vaZqn86eXeemq6XhanSq8ulSa+Ga5Sj6P+hBtd4YzdO7VtO+VjL80Y+9FfxL+q/kWMD5FO6PhwPxhuNVNAtmrdui8PDQpwy9K1LP0rLjl6dlWY9y74vlJeDXRryZONe4Ww9QcrsXbFyXzbivcm/NePmv5lf5FNuPfZRdBwsrk4yi+5klDOj828TQ8OxSmxONUbx5ovvNC2uEfaNhZyji632MHJ5JXf8Aan6/uP15eZPItSipRaaa3TXRnMxJeEOKda0qSwMbK7WNNNRrtj2lW9usd+np08iXp6xVVGPI3EcDYjVlgW1s1T0Li13WsPSKO1kS7Vsl7lUfil/ZeZVHHGffrcXl5KhGVK2qUVsoxb5rzPvIutyL5332Sssm95Sk92zC1X9nXfL/AFJCZqLG5F0IWgvHUMVFzuhGQAV00EAAAAAAAAAAAAAAAAAAAAAAAAydMwM3U8yOHp+LblZE+arrju9vHyXm+RuNT4I4s03EeXl6HkRpit5SrnC3srzUJNr122LT9hmm42PwetRhCLycy6f2k9veUYy7Kjv4cm/qyfmW41t/PRYg+ngiarGLZb3uqpxtZbJ9F17i5YfsxHUUzZZHqjnJdLWsl+HX7HJaaaTT3TPquc67I2VzlCcXvGUXs0/Jl88a+zbSNcdmXp6jpuoS5uUI/hWP+KK7/wCJc/HcpniPh/V+HstY2rYjpcv8OyL7Vdnyy7/Tr4ouGCbT0OMNtEu6/m1ePhqnTxRCBxLB6ihX8RLt1Th46e+JutC4wnDs0atHtx6K+C5r5kuvqv8AQmOPdTkUxuothbXLmpRe6ZUBmaXqebplrsw73Df4oPnGXqiXlpUdm3IoGJ7Lwz3fTdl2nJfTy7i1ys+MbaruI8qVXNRahJ+MlFJ/z5fQ98vi3V8ih1RlRRv1lVBqX0bb2ND6vcU8Do13nH3Z/A5qGR00ypdUsiJ4L/AMvSP2jT6v9GeOPj3ZE+zTXKW3Vpcl6vuN3p2mQxpRtsl27V026IlaWF73o5OCKTGJVcUMTmOXNUWyGwMXVf2dd8v9TKMXVf2dd8v9Sam/Td0UqNJ+uzqnmRkAFbNAAAAAAAAAAAAAAAAAAAAAAAAAJ97LuPK+HIS0rVIWT06ybnC2C7UqJPry74vry5p78nvyu7BzMXPxYZWFk1ZFE1vGyuSlF/VHKZtOG+INW4dzPvOlZcqt3vZVL3q7fmj3+vJ+ZQtpNiIsTe6ppnbkq8UX8rvRe/7cyy4TtE+kakMybzE+qevvodPmPqWDh6lhzw8/FqycefxV2R7Sfn6+ZEOCfaNpOvdjEzezpuoPkq7J/h2P+CT7/wCF8/XqTcx6toKvC5/hztVj04eqKnHqhe6epgrI96NUc1feaepTvGfspyKJTzOGZvIq33eHbL34/JJ/EvJ8/NlYW12U2zpurnXbXLszhOLjKL8GnzTOsSPcXcH6LxNXvnUOvKitoZVW0bI+Tf5l5Pf6F8wH+oEsFocRTeb8yfmTrr149St4nswyS8lL2V05eGnl0ObYpykoxTbb2SXVsk+hcJ35CV+pOVFe6aqXxyXn+7+voSXRtAwtJ+CP22Qns7pxXa+ngjaFkxPap8l46TJPm5+CcvPoSeC7Exx2lrl3l+VOHivPomXU8MbDxcbG+7Y+PXXV3xjHk/XxfmajUtMlQndRvKvq13x//DfGk1ziTB01umC+9ZC5OuEuUfKT7vTqcGz+K4jS1V6a7978zV4L3qvJe/66EjtZgOE19DastHup2XJxb3InNP8Aj9LLmaicowi5TkoxXVtmk1bUY5EHRQn9nv70n3mLqOdfnXytt7MU3uoQW0Y+iMY1qaudK2yJa/EwakwaOnk33O3lRcuSdQADiJkAAAAAAAAAAAAAAAAAAAAAAAAAAA/Gk1s0mn3Mm/BftH1jQexi5va1PT1yUJy/FrX8Mn1Xk/o0QkHFX4dTYhEsNSxHN7+XReKL3odFNVTUr/iQusvvjqdPcN8Q6TxDh/edLy42pfHW+Vlb8JR6r9H3G1XU5T0/Ny9OzK8zAybcbIr+GyuWzXl5ryfJlrcKe1ur7CNHEmNONsVt95xobxn80O5+m68kZFjuwFVSqslD+IzT9yevhn3cy8YbtPDMm5U9l2vJfT3metv+LP5mYepahiadR9tl3RrXPsx/NJ+CXeR/WeMqNpx0yqVk5N7WWx2ivp1f12Idl5WRmXu/KundY++T32XgvBeSLHhmy889nVPYbpzX08foTWL7aU1K3cpPxHa/tT18PqbzW+KczMbqw+1iUeKf4kvqunov9SPAF9pKOCkZ8OFtk98dTMa7EKivl+LUPVy+XROQAB1HGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAf//Z" alt="S'pace logo">
+      <div class="logo-text">S<span>'</span>pace</div>
+    </div>
+    <div class="pill">✉ Édition #01 · Mai 2026</div>
+  </div>
+  <div class="rainbow-bar"></div>
+  <div class="hd-kicker">Newsletter exclusive</div>
+  <div class="hd-title">Bienvenue dans<br>la <span class="pink">communauté</span> <span class="blue">S'pace.</span></div>
+  <p class="hd-sub">Ton accès direct à l'actu gaming, aux récompenses exclusives et au mini-jeu du mois — réservé aux joueurs qui ont scanné notre QR code en salle.</p>
+</div>
+
+<!-- COUPON -->
+<div class="sec">
+  <div class="sec-label">🎁 Ton cadeau de bienvenue</div>
+  <div class="coupon">
+    <span class="coupon-pct">-5%</span>
+    <div class="coupon-txt">sur ta prochaine visite au S'pace</div>
+    <div class="coupon-code">SPCWELCOME</div>
+    <div class="coupon-exp">Valable jusqu'au 30 juin 2026 · Non cumulable avec d'autres offres</div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- MESSAGE -->
+<div class="sec">
+  <div class="sec-label">💬 Mot de l'équipe</div>
+  <div class="msg">
+    <div class="msg-ico">🎮</div>
+    <div>
+      <h3>Bienvenue dans la communauté !</h3>
+      <p>Tu fais maintenant partie des joueurs qui reçoivent chaque mois du contenu exclusif directement dans leur boîte mail. Mini-jeu du mois, tournois, réductions, et en avant-première… les premières infos sur notre future application S'pace. Reste connecté — les meilleures choses arrivent. 🚀</p>
+    </div>
+  </div>
+</div>
+
+<!-- MINI-JEU -->
+<div class="sec" style="padding-top:0">
+  <div class="sec-label">🕹 Mini-jeu du mois</div>
+  <div class="game-block">
+    <div class="game-top">
+      <div class="game-badge">✦ Exclusif newsletter — Mai 2026 ✦</div>
+      <div class="game-title">ASTRO DÉFENSE</div>
+      <p class="game-desc">Détruis un maximum d'astéroïdes, bats le score du mois et remporte une récompense exclusive lors de ta prochaine visite au S'pace !</p>
+      <a href="jeu_sspace.html" class="btn-play">▶&nbsp;&nbsp;Jouer maintenant</a>
+      <div class="game-note">Jeu disponible 30 jours · Classement remis à zéro chaque mois</div>
+    </div>
+    <div class="game-bottom">
+      <div class="game-stat"><strong>840 pts</strong><span>Score à battre</span></div>
+      <div class="game-stat"><strong>-10%</strong><span>Récompense si battu</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- STATS -->
+<div class="sec">
+  <div class="sec-label">📊 Le S'pace en chiffres</div>
+  <div class="stats-row">
+    <div class="stat-card"><span class="stat-num">87%</span><div class="stat-lbl">prêts à scanner un QR code en salle</div></div>
+    <div class="stat-card"><span class="stat-num">75%</span><div class="stat-lbl">intéressés par un mini-jeu mensuel exclusif</div></div>
+    <div class="stat-card"><span class="stat-num">83%</span><div class="stat-lbl">pensent que ce dispositif rend la salle plus attractive</div></div>
+  </div>
+</div>
+
+<!-- EVENTS -->
+<div class="sec" style="padding-top:0">
+  <div class="sec-label">📅 Agenda S'pace</div>
+  <div class="event-tabs">
+    <div class="etab active">Juin</div>
+    <div class="etab">Juillet</div>
+    <div class="etab">Août</div>
+  </div>
+  <div class="event-row">
+    <div class="e-date"><span class="d">07</span><span class="m">Juin</span></div>
+    <div class="e-info"><h4>Tournoi Street Fighter VI</h4><p>Inscription gratuite · 16 places disponibles</p></div>
+    <div class="e-tag et-pink">🔥 Chaud</div>
+  </div>
+  <div class="event-row">
+    <div class="e-date"><span class="d">14</span><span class="m">Juin</span></div>
+    <div class="e-info"><h4>Soirée VR Experience</h4><p>Réalité virtuelle en équipe · 20h–23h</p></div>
+    <div class="e-tag et-blue">Nouveau</div>
+  </div>
+  <div class="event-row">
+    <div class="e-date"><span class="d">21</span><span class="m">Juin</span></div>
+    <div class="e-info"><h4>Gaming Night Abonnés</h4><p>Soirée exclusive newsletter · Accès prioritaire</p></div>
+    <div class="e-tag et-green">👑 VIP</div>
+  </div>
+</div>
+
+<div class="div-line"></div>
+
+<!-- APP TEASE -->
+<div class="sec">
+  <div class="sec-label">🔮 En avant-première</div>
+  <div class="app-block">
+    <div class="app-bar"></div>
+    <div class="app-body">
+      <h3>L'application S'pace arrive…</h3>
+      <p>Scores en temps réel, tournois officiels, classements belges et récompenses débloquables. La première application de salle d'arcade en Belgique. Les abonnés newsletter seront les premiers à y accéder.</p>
+      <div class="soon-pill">🚀 Bientôt disponible</div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="footer-logo">
+    <img src="data:image/png;base64,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" alt="S'pace">
+    <span>S'pace</span>
+  </div>
+  <p>Tu reçois cet email car tu as scanné notre QR code au S'pace.<br>
+  <a href="#">Se désabonner</a> &nbsp;·&nbsp; <a href="#">Voir en ligne</a><br><br>
+  © 2026 S'pace · Tous droits réservés</p>
+</div>
+
+</div>
+</body>
+</html>
