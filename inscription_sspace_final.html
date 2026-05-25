@@ -1,194 +1,144 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>S'pace · Rejoins la communauté</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap');
-:root{
-  --navy:#08091e; --navy2:#0c0e28; --card:#10143a;
-  --border:rgba(255,255,255,0.08);
-  --pink:#f0197d; --green:#00c16e; --blue:#1ab4f5; --orange:#ff8c00;
-  --white:#fff; --grey:rgba(255,255,255,0.5);
-}
-*{margin:0;padding:0;box-sizing:border-box;}
-html,body{min-height:100vh;}
-body{background:var(--navy);font-family:'Montserrat',sans-serif;color:var(--white);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;
-  padding:30px 16px;position:relative;overflow-x:hidden;}
 
-/* Grid bg */
-body::before{content:'';position:fixed;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.02)1px,transparent 1px),
-                   linear-gradient(90deg,rgba(255,255,255,.02)1px,transparent 1px);
-  background-size:36px 36px;pointer-events:none;}
+<div style="margin:0;padding:0;background:#08091e;font-family:Arial,sans-serif;">
+<table width="100%" cellpadding="0" cellspacing="0" style="background:#08091e;padding:20px 0;">
+<tr><td align="center">
+<table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;background:#0c0e28;border-radius:16px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);">
 
-/* Glow blobs */
-body::after{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);
-  width:700px;height:700px;border-radius:50%;
-  background:radial-gradient(circle,rgba(26,180,245,.06)0%,transparent 60%);pointer-events:none;}
+  <!-- Rainbow top bar -->
+  <tr><td style="background:linear-gradient(90deg,#f0197d,#ff8c00,#00c16e,#1ab4f5);height:4px;font-size:0;">&nbsp;</td></tr>
 
-.card{background:var(--navy2);border:1px solid var(--border);border-radius:18px;
-  padding:44px 42px;max-width:500px;width:100%;position:relative;z-index:1;
-  box-shadow:0 30px 100px rgba(0,0,0,0.6);}
+  <!-- HEADER -->
+  <tr><td style="padding:32px 40px 28px;background:#0c0e28;">
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td>
+          <span style="font-size:24px;font-weight:900;color:#ffffff;letter-spacing:1px;">S</span><span style="font-size:24px;font-weight:900;color:#f0197d;">'</span><span style="font-size:24px;font-weight:900;color:#ffffff;">pace</span>
+        </td>
+        <td align="right">
+          <span style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#1ab4f5;background:rgba(26,180,245,0.1);border:1px solid rgba(26,180,245,0.3);padding:5px 12px;border-radius:4px;">✉ Édition #01 · Mai 2026</span>
+        </td>
+      </tr>
+    </table>
+    <!-- Rainbow rule -->
+    <div style="height:3px;width:54px;background:linear-gradient(90deg,#f0197d,#ff8c00,#00c16e,#1ab4f5);border-radius:2px;margin:20px 0 16px;"></div>
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 10px;">Newsletter exclusive</p>
+    <h1 style="font-size:32px;font-weight:900;color:#ffffff;margin:0 0 12px;line-height:1.1;letter-spacing:-0.5px;">Bienvenue dans la<br><span style="color:#f0197d;">communauté</span> <span style="color:#1ab4f5;">S'pace</span>&nbsp;!</h1>
+    <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin:0;">Bonjour <strong style="color:#ffffff;">{{prenom}} {{nom}}</strong>, ton accès exclusif gaming est arrivé 🎮</p>
+  </td></tr>
 
-/* Rainbow top border */
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;border-radius:18px 18px 0 0;
-  background:linear-gradient(90deg,var(--pink),var(--orange),var(--green),var(--blue));}
+  <!-- COUPON -->
+  <tr><td style="padding:0 40px 32px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 16px;">🎁 Ton cadeau de bienvenue</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:rgba(240,25,125,0.06);border:1.5px dashed rgba(240,25,125,0.4);border-radius:12px;">
+      <tr><td style="padding:28px;text-align:center;">
+        <div style="font-size:72px;font-weight:900;color:#f0197d;line-height:1;margin-bottom:6px;">-5%</div>
+        <div style="font-size:14px;color:rgba(255,255,255,0.5);margin-bottom:20px;">sur ta prochaine visite au S'pace</div>
+        <div style="display:inline-block;font-size:18px;font-weight:800;letter-spacing:5px;color:#ffffff;background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);padding:12px 28px;border-radius:6px;margin-bottom:10px;">SPCWELCOME</div>
+        <div style="font-size:11px;color:rgba(255,255,255,0.4);font-style:italic;">Valable jusqu'au 30 juin 2026 · Non cumulable</div>
+      </td></tr>
+    </table>
+  </td></tr>
 
-/* Logo */
-.logo-row{display:flex;align-items:center;gap:12px;margin-bottom:28px;}
-.logo-img{width:42px;height:42px;border-radius:9px;object-fit:contain;}
-.logo-name{font-size:20px;font-weight:900;letter-spacing:.5px;}
-.logo-name span{color:var(--pink);}
+  <!-- DIVIDER -->
+  <tr><td style="padding:0 40px;"><div style="height:1px;background:rgba(255,255,255,0.07);"></div></td></tr>
 
-/* Kicker */
-.kicker{font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--blue);margin-bottom:10px;}
+  <!-- MESSAGE -->
+  <tr><td style="padding:28px 40px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 16px;">💬 Mot de l'équipe</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#10143a;border:1px solid rgba(255,255,255,0.07);border-left:3px solid #1ab4f5;border-radius:10px;">
+      <tr><td style="padding:20px;">
+        <p style="font-size:12px;font-weight:800;color:#1ab4f5;text-transform:uppercase;letter-spacing:0.5px;margin:0 0 8px;">Bienvenue dans la communauté !</p>
+        <p style="font-size:13px;color:rgba(255,255,255,0.55);line-height:1.7;margin:0;">Tu fais maintenant partie des joueurs qui reçoivent chaque mois du contenu exclusif. Mini-jeu du mois, tournois, réductions, et en avant-première les premières infos sur notre future application S'pace. Reste connecté — les meilleures choses arrivent. 🚀</p>
+      </td></tr>
+    </table>
+  </td></tr>
 
-/* Title */
-h1{font-size:clamp(24px,5vw,32px);font-weight:900;line-height:1.1;margin-bottom:14px;letter-spacing:-.5px;}
-h1 .pink{color:var(--pink);}
+  <!-- MINI-JEU -->
+  <tr><td style="padding:0 40px 28px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 16px;">🕹 Mini-jeu du mois</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;">
+      <!-- Top border gradient -->
+      <tr><td style="background:linear-gradient(90deg,#f0197d,#1ab4f5,#00c16e);height:3px;font-size:0;">&nbsp;</td></tr>
+      <tr><td style="background:linear-gradient(160deg,#0e0820,#120a28);padding:28px;text-align:center;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#f0197d;background:rgba(240,25,125,0.1);border:1px solid rgba(240,25,125,0.3);display:inline-block;padding:4px 14px;border-radius:4px;margin-bottom:14px;">✦ Exclusif newsletter — Mai 2026 ✦</div>
+        <div style="font-size:28px;font-weight:900;color:#ffffff;margin-bottom:10px;letter-spacing:-0.5px;">ASTRO DÉFENSE</div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.6;margin:0 0 22px;">Détruis un maximum d'astéroïdes, bats le score du mois et remporte une récompense exclusive lors de ta prochaine visite au S'pace !</p>
+      </td></tr>
+      <tr><td style="background:#111440;">
+        <table width="100%" cellpadding="0" cellspacing="0">
+          <tr>
+            <td width="50%" style="padding:16px;text-align:center;border-right:1px solid rgba(255,255,255,0.07);">
+              <div style="font-size:20px;font-weight:900;color:#00c16e;">840 pts</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">Score à battre</div>
+            </td>
+            <td width="50%" style="padding:16px;text-align:center;">
+              <div style="font-size:20px;font-weight:900;color:#00c16e;">-10%</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.4);text-transform:uppercase;letter-spacing:1px;">Récompense si battu</div>
+            </td>
+          </tr>
+        </table>
+      </td></tr>
+    </table>
+  </td></tr>
 
-/* Sub */
-.sub{font-size:13px;color:var(--grey);line-height:1.7;margin-bottom:24px;}
+  <!-- DIVIDER -->
+  <tr><td style="padding:0 40px;"><div style="height:1px;background:rgba(255,255,255,0.07);"></div></td></tr>
 
-/* Rainbow rule */
-.rule{height:3px;background:linear-gradient(90deg,var(--pink),var(--orange),var(--green),var(--blue));
-  width:54px;border-radius:2px;margin-bottom:24px;}
+  <!-- STATS -->
+  <tr><td style="padding:28px 40px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 16px;">📊 Le S'pace en chiffres</p>
+    <table width="100%" cellpadding="0" cellspacing="0">
+      <tr>
+        <td width="33%" style="padding-right:6px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#10143a;border:1px solid rgba(255,255,255,0.07);border-radius:10px;border-top:2px solid #f0197d;">
+            <tr><td style="padding:16px 10px;text-align:center;">
+              <div style="font-size:26px;font-weight:900;color:#f0197d;">87%</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.45);line-height:1.4;">prêts à scanner un QR code</div>
+            </td></tr>
+          </table>
+        </td>
+        <td width="33%" style="padding:0 3px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#10143a;border:1px solid rgba(255,255,255,0.07);border-radius:10px;border-top:2px solid #00c16e;">
+            <tr><td style="padding:16px 10px;text-align:center;">
+              <div style="font-size:26px;font-weight:900;color:#00c16e;">75%</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.45);line-height:1.4;">intéressés par un mini-jeu mensuel</div>
+            </td></tr>
+          </table>
+        </td>
+        <td width="33%" style="padding-left:6px;">
+          <table width="100%" cellpadding="0" cellspacing="0" style="background:#10143a;border:1px solid rgba(255,255,255,0.07);border-radius:10px;border-top:2px solid #ff8c00;">
+            <tr><td style="padding:16px 10px;text-align:center;">
+              <div style="font-size:26px;font-weight:900;color:#ff8c00;">83%</div>
+              <div style="font-size:10px;color:rgba(255,255,255,0.45);line-height:1.4;">trouvent ça plus attractif</div>
+            </td></tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
 
-/* Perks */
-.perks{display:flex;flex-direction:column;gap:10px;margin-bottom:28px;}
-.perk{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.03);
-  border:1px solid var(--border);border-radius:9px;padding:13px 15px;position:relative;overflow:hidden;}
-.perk::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;}
-.perk:nth-child(1)::before{background:var(--pink);}
-.perk:nth-child(2)::before{background:var(--green);}
-.perk:nth-child(3)::before{background:var(--orange);}
-.perk-ico{font-size:20px;flex-shrink:0;}
-.perk-txt strong{color:var(--white);font-size:13px;font-weight:700;display:block;margin-bottom:2px;}
-.perk-txt span{font-size:11px;color:var(--grey);}
+  <!-- APP TEASE -->
+  <tr><td style="padding:0 40px 32px;">
+    <p style="font-size:10px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:#1ab4f5;margin:0 0 16px;">🔮 En avant-première</p>
+    <table width="100%" cellpadding="0" cellspacing="0" style="background:#10143a;border:1px solid rgba(255,255,255,0.07);border-radius:12px;overflow:hidden;">
+      <tr>
+        <td width="4" style="background:linear-gradient(180deg,#f0197d,#1ab4f5,#00c16e);width:4px;">&nbsp;</td>
+        <td style="padding:22px 20px;">
+          <div style="font-size:16px;font-weight:900;color:#ffffff;margin-bottom:8px;">L'application S'pace arrive…</div>
+          <p style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin:0 0 14px;">Scores en temps réel, tournois officiels, classements belges et récompenses débloquables. Les abonnés newsletter seront les premiers à y accéder.</p>
+          <span style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:#f0197d;border:1.5px solid #f0197d;padding:5px 14px;border-radius:4px;">🚀 Bientôt disponible</span>
+        </td>
+      </tr>
+    </table>
+  </td></tr>
 
-/* Form */
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:13px;margin-bottom:13px;}
-.fg{display:flex;flex-direction:column;gap:7px;}
-.fg.full{margin-top:13px;}
-label{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--grey);}
-input{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:8px;
-  padding:13px 16px;font-family:'Montserrat',sans-serif;font-size:14px;font-weight:500;
-  color:var(--white);outline:none;transition:border-color .2s,background .2s;width:100%;}
-input::placeholder{color:rgba(255,255,255,.2);}
-input:focus{border-color:var(--blue);background:rgba(26,180,245,.05);}
-input.err{border-color:var(--pink);animation:shake .35s ease;}
+  <!-- FOOTER -->
+  <tr><td style="background:#040513;padding:24px 40px;text-align:center;border-top:1px solid rgba(255,255,255,0.07);">
+    <div style="font-size:18px;font-weight:900;color:rgba(255,255,255,0.25);margin-bottom:12px;letter-spacing:1px;">S<span style="color:rgba(240,25,125,0.4);">'</span>pace</div>
+    <p style="font-size:11px;color:rgba(255,255,255,0.2);line-height:1.9;margin:0;">Tu reçois cet email car tu t'es inscrit via notre QR code au S'pace.<br>© 2026 S'pace · Tous droits réservés</p>
+  </td></tr>
 
-.btn{display:block;width:100%;margin-top:22px;padding:16px;border:none;border-radius:8px;cursor:pointer;
-  font-family:'Montserrat',sans-serif;font-size:13px;font-weight:800;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--white);
-  background:linear-gradient(135deg,var(--pink),#9900cc);
-  transition:opacity .2s,transform .15s;}
-.btn:hover{opacity:.9;transform:translateY(-1px);}
-
-.legal{font-size:10px;color:rgba(255,255,255,.18);text-align:center;margin-top:14px;line-height:1.6;}
-
-/* Success */
-#success{display:none;text-align:center;}
-#success .check{font-size:60px;margin-bottom:18px;display:block;}
-#success h2{font-size:26px;font-weight:900;margin-bottom:10px;}
-#success h2 span{background:linear-gradient(135deg,var(--pink),var(--blue));
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-#success p{font-size:13px;color:var(--grey);line-height:1.7;margin-bottom:0;}
-.success-infos{display:flex;flex-direction:column;gap:10px;margin:22px 0;text-align:left;}
-.sinfo{display:flex;align-items:center;gap:13px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:8px;padding:12px 15px;}
-.sinfo-ico{font-size:20px;flex-shrink:0;}
-.sinfo div{display:flex;flex-direction:column;gap:2px;}
-.sinfo strong{font-size:13px;font-weight:700;color:var(--white);}
-.sinfo span{font-size:11px;color:var(--grey);}
-.success-tag{font-size:13px;font-weight:700;color:var(--blue);letter-spacing:.5px;margin-top:6px;}
-
-@keyframes shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-6px)}40%{transform:translateX(6px)}60%{transform:translateX(-4px)}80%{transform:translateX(4px)}}
-@media(max-width:440px){.card{padding:30px 20px;}.form-row{grid-template-columns:1fr;}}
-</style>
-</head>
-<body>
-<div class="card">
-
-  <!-- LOGO -->
-  <div class="logo-row">
-    <img class="logo-img" src="data:image/png;base64,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" alt="Logo S'pace">
-    <div class="logo-name">S<span>'</span>pace</div>
-  </div>
-
-  <!-- FORM STATE -->
-  <div id="form-state">
-    <div class="kicker">Newsletter exclusive</div>
-    <h1>Le jeu ne s'arrête<br>pas ici. <span class="pink">🎮</span></h1>
-    <div class="rule"></div>
-    <p class="sub">Remplis le formulaire et reçois <strong style="color:var(--white)">immédiatement</strong> ta newsletter avec ton coupon -5% et le mini-jeu du mois !</p>
-
-    <div class="perks">
-      <div class="perk">
-        <div class="perk-ico">🎁</div>
-        <div class="perk-txt"><strong>-5% offert dès l'inscription</strong><span>Sur ta prochaine visite au S'pace</span></div>
-      </div>
-      <div class="perk">
-        <div class="perk-ico">🕹</div>
-        <div class="perk-txt"><strong>Mini-jeu exclusif chaque mois</strong><span>Bats le score et gagne des récompenses</span></div>
-      </div>
-      <div class="perk">
-        <div class="perk-ico">🚀</div>
-        <div class="perk-txt"><strong>Accès prioritaire à l'app S'pace</strong><span>Sois le premier informé du lancement</span></div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="fg">
-        <label for="nom">Nom</label>
-        <input type="text" id="nom" placeholder="Dupont" autocomplete="family-name">
-      </div>
-      <div class="fg">
-        <label for="prenom">Prénom</label>
-        <input type="text" id="prenom" placeholder="Alice" autocomplete="given-name">
-      </div>
-    </div>
-    <div class="fg full">
-      <label for="email">Adresse email</label>
-      <input type="email" id="email" placeholder="alice@email.com" autocomplete="email">
-    </div>
-
-    <button class="btn" onclick="handleSubmit()">Recevoir ma newsletter →</button>
-    <div class="legal">En t'inscrivant tu acceptes de recevoir la newsletter mensuelle S'pace.<br>Désabonnement possible à tout moment.</div>
-  </div>
-
-  <!-- SUCCESS STATE -->
-  <div id="success">
-    <span class="check">🎉</span>
-    <h2>Bienvenue <span id="prenom-out"></span> !</h2>
-    <p>Ta newsletter S'pace vient d'être envoyée à<br><strong id="email-out" style="color:var(--white)"></strong></p>
-    <div class="success-infos">
-      <div class="sinfo"><span class="sinfo-ico">🎁</span><div><strong>Ton coupon -5%</strong><span>t'attend dans ta boîte mail</span></div></div>
-      <div class="sinfo"><span class="sinfo-ico">🕹</span><div><strong>Le mini-jeu du mois</strong><span>est prêt à être joué</span></div></div>
-      <div class="sinfo"><span class="sinfo-ico">📬</span><div><strong>Pense à vérifier tes spams</strong><span>si tu ne vois pas l'email</span></div></div>
-    </div>
-    <div class="success-tag">À très vite au S'pace ! 🎮</div>
-  </div>
-
+</table>
+</td></tr>
+</table>
 </div>
-<script>
-function handleSubmit(){
-  const nom=document.getElementById('nom');
-  const prenom=document.getElementById('prenom');
-  const email=document.getElementById('email');
-  let ok=true;
-  [nom,prenom,email].forEach(f=>{f.classList.remove('err');});
-  if(!nom.value.trim()){nom.classList.add('err');ok=false;}
-  if(!prenom.value.trim()){prenom.classList.add('err');ok=false;}
-  if(!email.value.trim()||!email.value.includes('@')){email.classList.add('err');ok=false;}
-  if(!ok)return;
-  document.getElementById('prenom-out').textContent=prenom.value.trim();
-  document.getElementById('email-out').textContent=email.value.trim();
-  document.getElementById('form-state').style.display='none';
-  document.getElementById('success').style.display='block';
-}
-</script>
-</body>
-</html>
